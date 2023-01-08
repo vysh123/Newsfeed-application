@@ -1,0 +1,21 @@
+.container {
+  height: 100vh;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}
+
+svg.material-icons {
+  height: 24px;
+  width: auto;
+}
+
+svg.material-icons:not(:last-child) {
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 575px) {
+  svg#rocket-smoke {
+    display: none;
+    visibility: hidden;
+  }
+}

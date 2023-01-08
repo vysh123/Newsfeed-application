@@ -1,0 +1,35 @@
+.toolbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #28282B;
+    color: white;
+    font-weight: 600;
+}
+
+.toolbar-right {
+    img {
+        height: 30px;
+    }
+}
+
+.toolbar img {
+    margin: 0 16px;
+}
+
+.toolbar #notification:hover {
+    opacity: 0.8;
+}
+
+.header {
+    font-size: x-large;
+    font-family: cursive;
+}
+
+.spacer {
+    flex: 1;
+}

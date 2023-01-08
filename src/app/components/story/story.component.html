@@ -1,0 +1,40 @@
+<div class="div-outer">
+    <div class="inner-container row p-3" infiniteScroll [scrollWindow]="false" [infiniteScrollDistance]="2"
+        (scrolled)="onScroll($event)" *ngIf="headlineData?.articles.length > 0">
+        <div class="inner-column" *ngFor="let article of headlineData?.articles; let i=index">
+            <mat-card class="example-card shadow-effect">
+                <mat-card-header>
+                    <mat-card-title class="title">
+                        {{article.title}}
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        Source: {{article.source.name}}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image class="img-article" src="{{article.urlToImage}}" alt="">
+                <div class="icons">
+                    <img src="../../../assets/heart.png">
+                    <img src="../../../assets/chat.png">
+                    <img src="../../../assets/send.png">
+                    <img id="save-icon" src="../../../assets/save-instagram.png">
+                </div>
+                <mat-card-content>
+                    <div class="div-description" *ngIf="initialLoad">
+                        {{article.description | slice:0:50}}
+                    </div>
+                    <div class="div-description" *ngIf="!initialLoad">
+                        {{article.isClicked ? article?.description : article?.description | slice: 0:50 }}
+                    </div>
+                    <p class="show-more" (click)="changeShow(i)">{{ (article.isClicked) ? 'Show less': '... Show More'
+                        }}</p>
+                    <p>
+                        Published at: <span class="badge badge-pill badge-primary">{{article.publishedAt |
+                            date:'medium'}}</span>
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+
+</div>
